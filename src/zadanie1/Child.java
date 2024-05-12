@@ -7,7 +7,7 @@ class Child {
     private int id;
     private String gender;
     private String name;
-    private Date birthDate;
+    private Date birthDate; // preferuje zeby korzystac z klasy localDate
     private int weight;
     private int height;
     private Mother mother;

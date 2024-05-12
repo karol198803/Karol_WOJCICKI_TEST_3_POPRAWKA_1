@@ -101,3 +101,4 @@ Id_pacjenta	Nazwisko	Imie	PESEL	Data_urodzenia
 416	Rawski	Mariusz	98062657877	1998-6-26
 418	Borowski	Andrzej	92031487655	1992-3-14
 420	Kandulska	Eugenia	91052687765	1991-5-26
+101 Adam        Adam    88031910693 1988-03-19ss

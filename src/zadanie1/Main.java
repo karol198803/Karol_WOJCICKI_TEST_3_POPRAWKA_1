@@ -3,11 +3,8 @@ package zadanie1;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -99,17 +96,20 @@ public class Main {
     }
 
     private static Child findTallestChildByGender(List<Child> children, String gender) {
-        Child tallestChild = null;
-        int maxHeight = 0;
+        //
+        if(children == null || children.isEmpty()){
+            throw new IllegalArgumentException("Children list cant be null");
+        }
+
+        Child tallestChild = children.get(0);
 
         for (Child child : children) {
-            if (child.getGender().equals(gender) && child.getHeight() > maxHeight) {
-                maxHeight = child.getHeight();
+            if (child.getGender().equals(gender) && child.getHeight() > tallestChild.getHeight()) {
                 tallestChild = child;
             }
         }
 
-        return tallestChild; // Może być null, jeśli nie znaleziono
+        return tallestChild;
     }
 
 
@@ -156,7 +156,7 @@ public class Main {
         List<Child> daughters = new ArrayList<>();
 
         for (Child child : children) {
-            if ("c".equals(child.getGender()) && child.getMother() != null && child.getName().equals(child.getMother().getName())) {
+            if ("c".equals(child.getGender()) && child.getName().equals(child.getMother().getName())) {
                 daughters.add(child);
             }
         }
